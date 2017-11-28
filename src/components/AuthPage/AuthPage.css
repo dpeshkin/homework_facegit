@@ -1,0 +1,10 @@
+.auth {
+  width: 300px;
+}
+
+.auth__input {
+  margin-bottom: 10px;
+}
+.auth__input input {
+  width: 100%;
+}
