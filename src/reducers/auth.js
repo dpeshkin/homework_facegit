@@ -9,3 +9,5 @@ export default handleAction(
   }),
   { token: "" }
 );
+
+export const getToken = state => state.auth.token;

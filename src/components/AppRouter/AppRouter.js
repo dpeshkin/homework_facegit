@@ -1,23 +1,29 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import AuthPage from "../AuthPage";
+import UserPage from "../UserPage";
+import PrivateRoute from "../PrivateRoute";
 import "./AppRouter.css";
+import { connect } from "react-redux";
+import { getToken } from "../../reducers/auth";
 
 class AppRouter extends Component {
   render() {
+    const { token } = this.props;
     return (
       <div className="App">
         <Switch>
-          <Route path="/login" exact component={AuthPage} />
-          <Redirect to="/login" />
+          <PrivateRoute path="/user/:name" component={UserPage} />
+          {!token && <Route path="/login" component={AuthPage} />}
+          <Redirect to="/user/ekb96" />
         </Switch>
       </div>
     );
   }
 }
 
-export default AppRouter;
+const mapStateToProps = state => ({
+  token: getToken(state)
+});
 
-//
-// <Route path="/shows/:id" component={ShowPage} />
-// <Redirect to="/" />
+export default withRouter(connect(mapStateToProps)(AppRouter));

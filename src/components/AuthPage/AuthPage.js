@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./AuthPage.css";
 import { setToken } from "../../actions/auth";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class AuthPage extends Component {
   state = {
