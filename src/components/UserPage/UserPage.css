@@ -1,0 +1,31 @@
+.user {
+  width: 50vw;
+  display: flex;
+}
+.user__photo {
+  width: 300px;
+  margin-right: 20px;
+  border: solid 1px rgb(202, 199, 199);
+  border-radius: 5px;
+  padding: 5px;
+}
+.user__photo img {
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+.user__description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.user__props {
+  margin-bottom: 20px;
+}
+
+.user__name {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}

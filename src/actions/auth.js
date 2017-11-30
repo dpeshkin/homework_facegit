@@ -1,3 +1,7 @@
 import { createActions } from "redux-actions";
 
-export const { setToken } = createActions(("SET_TOKEN": null));
+export const { setToken, authorize, logout } = createActions({
+  SET_TOKEN: null,
+  AUTHORIZE: null,
+  logout: null
+});
