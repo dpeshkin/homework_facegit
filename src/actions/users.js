@@ -3,9 +3,15 @@ import { createActions } from "redux-actions";
 export const {
   fetchUserRequest,
   fetchUserSuccess,
-  fetchUserFailure
-} = createActions({
-  FETCH_USER_REQUEST: null,
-  FETCH_USER_SUCCESS: null,
-  FETCH_USER_FAILURE: null
-});
+  fetchUserFailure,
+  fetchUserFollowersRequest,
+  fetchUserFollowersSuccess,
+  fetchUserFollowersFailure
+} = createActions(
+  "FETCH_USER_REQUEST",
+  "FETCH_USER_SUCCESS",
+  "FETCH_USER_FAILURE",
+  "FETCH_USER_FOLLOWERS_REQUEST",
+  "FETCH_USER_FOLLOWERS_SUCCESS",
+  "FETCH_USER_FOLLOWERS_FAILURE"
+);

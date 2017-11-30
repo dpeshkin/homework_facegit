@@ -1,0 +1,21 @@
+.followers-item {
+  margin: 0 20px 60px;
+}
+.follower {
+  display: flex;
+}
+.follower__photo {
+  width: 100px;
+  margin-right: 40px;
+}
+.follower__photo img {
+  width: 100%;
+  height: auto;
+  border: solid 1px rgb(202, 202, 202);
+  border-radius: 5px;
+  padding: 10px;
+}
+.follower__name {
+  padding-top: 20px;
+  font-size: 1.2rem;
+}

@@ -15,7 +15,7 @@ class AppRouter extends Component {
         <Switch>
           <PrivateRoute path="/user/:name" component={UserPage} />
           {!token && <Route path="/login" component={AuthPage} />}
-          <Redirect to="/user/ekb196" />
+          <Redirect to="/user/dex157" />
         </Switch>
       </div>
     );

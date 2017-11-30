@@ -1,6 +1,19 @@
+.user-container {
+  width: 100%;
+  margin: 0 40px;
+}
+
+.user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .user {
   width: 50vw;
   display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 .user__photo {
   width: 300px;
@@ -28,4 +41,8 @@
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.2rem;
+}
+
+.user__followers {
+  width: 100%;
 }
