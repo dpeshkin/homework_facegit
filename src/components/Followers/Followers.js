@@ -18,19 +18,25 @@ class Followers extends Component {
   render() {
     const { followers, fetching } = this.props;
     return (
-      <ul className="followers-list">
-        {fetching || !followers ? (
+      <div className="followers-list">
+        {fetching ? (
           <Preloader />
         ) : (
-          followers.map(follower => (
-            <Follower
-              photo={follower.avatar_url}
-              name={follower.login}
-              key={follower.id}
-            />
-          ))
+          <div>
+            {!followers || followers.length === 0 ? (
+              <div>У пользователя нет подписчиков...</div>
+            ) : (
+              followers.map(follower => (
+                <Follower
+                  photo={follower.avatar_url}
+                  name={follower.login}
+                  key={follower.id}
+                />
+              ))
+            )}
+          </div>
         )}
-      </ul>
+      </div>
     );
   }
 }

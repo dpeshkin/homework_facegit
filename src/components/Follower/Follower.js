@@ -6,7 +6,7 @@ class Follower extends Component {
   render() {
     const { photo, name } = this.props;
     return (
-      <li className="followers-item">
+      <div className="followers-item">
         <div className="follower">
           <div className="follower__photo">
             <img src={photo} alt="" />
@@ -15,7 +15,7 @@ class Follower extends Component {
             <Link to={`/user/${name}`}>{name}</Link>
           </div>
         </div>
-      </li>
+      </div>
     );
   }
 }

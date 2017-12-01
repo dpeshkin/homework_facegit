@@ -1,7 +1,7 @@
 import { authorize, logout } from "../actions/auth";
 import { take, put, call, select } from "redux-saga/effects";
 import { setTokenApi, clearTokenApi } from "../api";
-import { getToken } from "../reducers/auth";
+import { getIsAuthorized } from "../reducers/auth";
 import {
   getTokenFromLocalStorage,
   setTokenToLocalStorage,
@@ -10,16 +10,16 @@ import {
 
 export function* authFlow() {
   while (true) {
-    const isAuthorized = yield select(getToken);
-    const localStorageToken = yield call(getTokenFromLocalStorage);
+    const isAuthorized = yield select(getIsAuthorized); //запрос гетером к стейту
+    const localStorageToken = yield call(getTokenFromLocalStorage); // вызов метода апи который берет токен из ЛС
     let token;
 
     if (!isAuthorized) {
       if (localStorageToken) {
         token = localStorageToken;
-        yield put(authorize());
+        yield put(authorize()); // вызов экшена авторизации
       } else {
-        const action = yield take(authorize);
+        const action = yield take(authorize); // ждет экшена авторизации
         token = action.payload;
       }
     }

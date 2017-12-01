@@ -10,7 +10,8 @@ export default handleActions(
     [fetchUserFollowersRequest]: state => ({
       ...state,
       isFetching: true,
-      error: false
+      error: false,
+      data: null
     }),
     [fetchUserFollowersSuccess]: (state, { payload }) => ({
       ...state,
@@ -26,7 +27,8 @@ export default handleActions(
   },
   {
     isFetching: false,
-    error: false
+    error: false,
+    data: null
   }
 );
 

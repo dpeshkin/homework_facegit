@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./AuthPage.css";
-import { setToken } from "../../actions/auth";
+import { authorize } from "../../actions/auth";
 import { connect } from "react-redux";
 
 class AuthPage extends Component {
@@ -12,7 +12,7 @@ class AuthPage extends Component {
   };
   handleOnKeyDown = e => {
     if (e.keyCode === 13) {
-      this.props.setToken(this.state.token);
+      this.props.authorize(this.state.token);
     }
   };
   render() {
@@ -44,7 +44,7 @@ class AuthPage extends Component {
 }
 
 const mapDispatchToProps = {
-  setToken
+  authorize
 };
 
 export default connect(null, mapDispatchToProps)(AuthPage);

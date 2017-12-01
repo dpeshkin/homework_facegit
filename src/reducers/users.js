@@ -10,7 +10,8 @@ export default handleActions(
     [fetchUserRequest]: state => ({
       ...state,
       isFetching: true,
-      error: false
+      error: false,
+      data: null
     }),
     [fetchUserSuccess]: (state, { payload }) => ({
       ...state,
@@ -32,3 +33,4 @@ export default handleActions(
 
 export const getData = state => state.users.data;
 export const getFetching = state => state.users.isFetching;
+export const getError = state => state.users.error;

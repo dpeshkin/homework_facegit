@@ -1,5 +1,4 @@
-.followers-list {
-  list-style: none;
+.followers-list > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
