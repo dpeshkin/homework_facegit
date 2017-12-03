@@ -6,8 +6,8 @@ import PrivateRoute from "../PrivateRoute";
 import "./AppRouter.css";
 import { connect } from "react-redux";
 import { getIsAuthorized } from "../../reducers/auth";
-
-class AppRouter extends Component {
+export const abc = 123;
+export class AppRouter extends Component {
   render() {
     const { isAuthorized } = this.props;
     return (
