@@ -7,7 +7,7 @@ import Followers from "../Followers";
 import Preloader from "../Preloader";
 import "./UserPage.css";
 
-class UserPage extends Component {
+export class UserPage extends Component {
   componentDidMount() {
     const name = this.props.match.params.name;
     this.props.fetchUserRequest(name);
@@ -35,7 +35,7 @@ class UserPage extends Component {
         ) : (
           <div className="user-wrapper">
             {!data ? (
-              <div>Такого пользователя не существует!</div>
+              <div className="error">Такого пользователя не существует!</div>
             ) : (
               <div className="user-page">
                 <div className="user">
@@ -44,7 +44,7 @@ class UserPage extends Component {
                   </div>
                   <div className="user__description">
                     <div className="user__props user__name">{data.login}</div>
-                    <div className="user__props user__followers">
+                    <div className="user__props user__followers-count">
                       Followers: {data.followers}
                     </div>
                     <div className="user__props user__repos">

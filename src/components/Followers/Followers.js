@@ -6,7 +6,7 @@ import Preloader from "../Preloader";
 import Follower from "../Follower";
 import "./Followers.css";
 
-class Followers extends Component {
+export class Followers extends Component {
   componentDidMount() {
     const name = this.props.user;
     this.props.fetchUserFollowersRequest(name);
