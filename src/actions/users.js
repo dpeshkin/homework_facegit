@@ -15,3 +15,6 @@ export const {
   "FETCH_USER_FOLLOWERS_SUCCESS",
   "FETCH_USER_FOLLOWERS_FAILURE"
 );
+export const { fetchTokenOwnerRequest } = createActions(
+  "FETCH_TOKEN_OWNER_REQUEST"
+);
