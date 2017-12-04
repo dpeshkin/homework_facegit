@@ -22,7 +22,8 @@ export default handleActions(
     [fetchUserFollowersFailure]: state => ({
       ...state,
       isFetching: false,
-      error: true
+      error: true,
+      data: null
     })
   },
   {

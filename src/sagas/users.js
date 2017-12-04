@@ -6,7 +6,7 @@ import {
 import { takeLatest, call, put } from "redux-saga/effects";
 import { getUserInformation } from "../api";
 
-function* FetchUserRequest({ payload }) {
+export function* FetchUserRequest({ payload }) {
   try {
     const userData = yield call(getUserInformation, payload);
     yield put(fetchUserSuccess(userData));

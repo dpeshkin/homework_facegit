@@ -11,9 +11,9 @@ export class Followers extends Component {
     const name = this.props.user;
     this.props.fetchUserFollowersRequest(name);
   }
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log(nextProps);
+  // }
 
   render() {
     const { followers, fetching } = this.props;

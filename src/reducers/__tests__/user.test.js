@@ -49,7 +49,6 @@ describe("В редьюсере users", () => {
 
       it("изменяет флаг error на true", () => {
         const next = users({ error: false }, fetchUserFailure());
-        console.log(next.error);
         expect(next.error).toBeTruthy();
       });
 

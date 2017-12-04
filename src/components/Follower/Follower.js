@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Follower.css";
 
-class Follower extends Component {
+export class Follower extends Component {
   render() {
     const { photo, name } = this.props;
     return (
