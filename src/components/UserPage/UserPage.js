@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { logout } from "../../actions/auth";
-import { fetchUserRequest } from "../../actions/users";
+
+import { fetchUserRequest, fetchTokenOwnerRequest } from "../../actions/users";
 import { getData, getFetching } from "../../reducers/users";
 import Followers from "../Followers";
 import Preloader from "../Preloader";
@@ -10,26 +10,20 @@ import "./UserPage.css";
 export class UserPage extends Component {
   componentDidMount() {
     const name = this.props.match.params.name;
-    this.props.fetchUserRequest(name);
+    name == null
+      ? this.props.fetchTokenOwnerRequest()
+      : this.props.fetchUserRequest(name);
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.name !== nextProps.match.params.name) {
       this.props.fetchUserRequest(nextProps.match.params.name);
     }
   }
-  appLogout = () => {
-    this.props.logout();
-  };
 
   render() {
     const { data, fetching } = this.props;
     return (
       <div className="user-container">
-        <div className="user__button">
-          <button onClick={this.appLogout} className="logout-button">
-            LOGOUT
-          </button>
-        </div>
         {fetching ? (
           <Preloader />
         ) : (
@@ -71,7 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchUserRequest,
-  logout
+  fetchTokenOwnerRequest
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
