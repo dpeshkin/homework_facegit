@@ -9,7 +9,7 @@ script:
 
 scripts: true
 
-# after_success:
-#   - echo '/*  /index.html 200' > build/_redirects
-#   - chmod +x ./deploy.sh
-#   - ./deploy.sh
+after_success:
+  - echo '/*  /index.html 200' > build/_redirects
+  - chmod +x ./deploy.sh
+  - ./deploy.sh
