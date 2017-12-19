@@ -1,8 +1,33 @@
-# Home project: facegit
-
 [![build status](https://travis-ci.org/ekb196/homework_facegit.svg?branch=master)](https://travis-ci.org/ekb196/homework_facegit)
 
-[Работающий сайт здесь](http://5a2943f8a6188f57c8d8e834.awesome-torvalds-ea40a4.netlify.com)
+**Facegit** - это простой клиент для GitHub, использующий его API. Прижение сделано в рамках курса [React.js. Разработка веб-приложений
+](https://loftschool.com/course/react) в loftschool.
+
+Для работы с приложением вам понадобится github токен, получить его вы можете [здесь](https://github.com/settings/tokens).
+
+---
+
+Установка и запуск проекта
+
+```bash
+    * clone or download this repo
+    * yarn
+    * yarn start
+```
+
+Если вы просто хотите посмотреть, что в итоге получилось - проект лежит на [netlify](https://hopeful-hypatia-963dd0.netlify.com/login)
+
+### Ключевые особенности проекта:
+
+* redux для управления состоянием
+* redux-saga в качестве middleware, для управления асинхронными операциями
+* axios для работы с сетью
+* тесты компонент, редюсеров и саг с использованием jest + enzyme
+* интеграция с travis-ci
+
+---
+
+### Исходное задание:
 
 [Пример первой части](http://5a19a183a6188f20378c66f1.brave-golick-d6a52f.netlify.com).
 
@@ -80,8 +105,7 @@
    последователей. При монтировании нужно делать запрос на получение информации
    о пользователе. Если в будущем, мы переходим на другую страницу, компонент
    `UserPage` не будет заново мантироваться, по этому, с помощью
-   `componentWillReceiveProps` нужно следить, когда поменяется пропс `{ match: {
-   params: { name }}}`. Не забудьте сделать проверки в методе `render` на
+   `componentWillReceiveProps` нужно следить, когда поменяется пропс `{ match: { params: { name }}}`. Не забудьте сделать проверки в методе `render` на
    `isFetching` и на то, что пользователь присутствует.
 1. **Написать тесты** для компоненты UserPage:
    * Проверить наличие метода componentDidMount,
@@ -267,8 +291,7 @@ if (isFetching) {
 > централизованную обработку сетевых запросов, в данном случае, идет обработка
 > всех сетевых запросов, и в том случае, если ответ содержит 401 статус,
 > соответствующий ошибке токена — происходит logout. Все сетевые запросы я делаю
-> следующим образом: `response = yield call(requestFlow, getUserInformation,
-> action.payload);`
+> следующим образом: `response = yield call(requestFlow, getUserInformation, action.payload);`
 
 ---
 
